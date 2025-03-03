@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 
 const userRoutes = require("./routes/user.routes")
+const authRoutes = require("./routes/auth.routes")
+
 
 dotenv.config();
 
@@ -10,6 +12,7 @@ const app = express();
 app.use(express.json());
 
 app.use("/users", userRoutes);
+app.use("/auth", authRoutes);
 
 
 // Database
